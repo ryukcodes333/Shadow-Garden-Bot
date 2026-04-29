@@ -1,0 +1,22 @@
+{
+  "name": "shadow-garden-bot",
+  "version": "1.0.1",
+  "description": "Shadow Garden — WhatsApp bot (Baileys + Mongoose). Pre-bundled, with self-ping keep-alive for Render free tier.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --enable-source-maps ./keepalive.mjs",
+    "start:bot": "node --enable-source-maps ./dist/index.mjs"
+  },
+  "engines": {
+    "node": ">=20.10"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@whiskeysockets/baileys": "7.0.0-rc.9",
+    "express": "^4.21.2",
+    "play-dl": "^1.9.7",
+    "sharp": "^0.34.5",
+    "wa-sticker-formatter": "^4.4.4"
+  }
+}

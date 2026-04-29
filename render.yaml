@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: shadow-garden-bot
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /ping
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGO_URI
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: BOT_OWNER_LID
+        sync: false
+      - key: PREFIX
+        value: "."
+      # IMPORTANT: after the first deploy, copy the live URL Render gives you
+      # (e.g. https://shadow-garden-bot.onrender.com) and paste it here, then
+      # redeploy. The bot pings this URL every 10 minutes to stay awake.
+      - key: RENDER_URL
+        sync: false
